@@ -6,10 +6,9 @@ body {
 }
 
 .container {
-    width: 90%;
+    min-width: 90%;
     max-width: 1240px;
-    padding: 100px;
-    margin: auto;
+    margin: 0 auto;
 }
 
 .header {
@@ -20,13 +19,14 @@ body {
     align-items: center;
     text-align: center;
     gap: 150px;
+    padding: 50px 0;
 }
 
-.pic img {
+.pic {
     width: 350px;
     height: 350px;
     border-radius: 50%;
-
+    background: url(./bachi.jpg) no-repeat center center/cover;
 }
 
 .name h2 {
@@ -55,18 +55,12 @@ body {
 
 .main {
     display: grid;
-    grid-template-columns: 50% 50%;
-    justify-content: center;
+    grid-template-columns: 1fr 1fr;
     align-items: baseline;
-    grid-template-rows: 25% 25% 30% 20%;
-    padding: 100px;
     grid-gap: 30px;
 }
 
 .skills {
-    grid-column-start: 1;
-    width: 350px;
-
     h2 {
 
         font-size: 18px;
@@ -87,8 +81,6 @@ body {
 }
 
 .AboutMe {
-    grid-column-start: 2;
-
     h1 {
         font-size: 36px;
 
@@ -100,8 +92,6 @@ body {
 }
 
 .awards {
-    grid-row-start: 2;
-
     h2 {
         font-size: 18px;
         color: rgba(158, 140, 108, 1);
@@ -120,17 +110,12 @@ body {
 }
 
 .Experience {
-    grid-column-start: 2;
-    grid-row: 2/3;
-    width: 635px;
-
+    grid-row: span 2; /* This will make the section span 2 rows */
     h1 {
         font-size: 36px;
-
     }
 
     h2 {
-
         font-size: 18px;
         color: rgba(158, 140, 108, 1);
     }
@@ -138,13 +123,9 @@ body {
     p {
         font-size: 20px;
     }
-
 }
 
 .traits {
-    grid-row-start: 3;
-    width: 350px;
-
     h2 {
         font-size: 18px;
         color: rgba(158, 140, 108, 1);
@@ -163,11 +144,8 @@ body {
 }
 
 .recent-works {
-    grid-row-start: 4;
-
     h1 {
         font-size: 36px;
-
     }
 
     ul {
@@ -175,22 +153,14 @@ body {
         margin: 0;
         padding: 0;
         color: #0096c7;
-
     }
-
-
 
     ul li {
         font-size: 20px;
-
     }
-
 }
 
 .Education {
-    grid-column-start: 2;
-    grid-row: 4;
-
     h1 {
         font-size: 36px;
 
@@ -205,6 +175,8 @@ body {
 .contact {
     background-color: rgba(0, 0, 0, 0.9);
     text-align: center;
+    margin-top: 50px;
+    padding: 50px 0;
 
     h2 {
         font-size: 66px;
@@ -229,12 +201,16 @@ body {
 
 @media (max-width: 768px) {
     .container {
-        width: 95%;
+        min-width: 95%;
     }
 
-    .header img {
-        width: 100px;
-        height: 100px;
+    .header  {
+        gap: 50px;
+        flex-direction: column;
+        .pic{
+            width: 200px;
+            height: 200px;
+        }
     }
 
     .header h1 {
@@ -258,11 +234,6 @@ body {
     }
 
     .main {
-        display: flex;
-        flex-wrap: wrap;
-        margin: 0;
-        padding: 0;
-        gap: 0;
+        grid-template-columns: 1fr; /* This will make the section span 1 column */
     }
-
 }
